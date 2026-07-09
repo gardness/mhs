@@ -1,29 +1,50 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --color-brand: #1d3557;
+    --color-background: #f4f4f5;
+    --color-surface: white;
+    --color-text: #1a1a1a;
+    --color-border: #cbd5e1;
+    --color-border-soft: #e2e8f0;
+    --border-control: 1px solid var(--color-border);
+    --border-soft: 1px solid var(--color-border-soft);
+    --horizontal-page-padding: 2rem;
+    --radius-control: 6px;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #f4f4f5;
-    color: #1a1a1a;
+    background: var(--color-background);
+    color: var(--color-text);
     min-height: 100vh;
 }
 
 header {
-    background: #1d3557;
-    color: white;
-    padding: 1.25rem 2rem;
+    background: var(--color-brand);
+    color: var(--color-surface);
+    padding: 1.25rem var(--horizontal-page-padding);
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 0.02em;
 }
 
 .search-form {
-    background: white;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 1rem 2rem;
+    background: var(--color-surface);
+    border-bottom: var(--border-soft);
+    padding: 1rem var(--horizontal-page-padding);
     display: flex;
     gap: 0.75rem;
     align-items: center;
@@ -40,15 +61,15 @@ header {
     display: block;
     width: 100%;
     padding: 0.55rem 2.6rem 0.55rem 0.85rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border: var(--border-control);
+    border-radius: var(--radius-control);
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.15s;
 }
 
 .query-field input[type="text"]:focus {
-    border-color: #1d3557;
+    border-color: var(--color-brand);
 }
 
 .clear-btn {
@@ -100,23 +121,23 @@ header {
 .limit-group input[type="number"] {
     width: 70px;
     padding: 0.55rem 0.5rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border: var(--border-control);
+    border-radius: var(--radius-control);
     font-size: 0.9rem;
     text-align: center;
     outline: none;
 }
 
 .limit-group input[type="number"]:focus {
-    border-color: #1d3557;
+    border-color: var(--color-brand);
 }
 
 .search-btn {
     padding: 0.55rem 1.25rem;
-    background: #1d3557;
+    background: var(--color-brand);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-control);
     font-size: 0.95rem;
     cursor: pointer;
     transition: background 0.15s;
@@ -132,7 +153,7 @@ header {
 }
 
 .status {
-    padding: 0.6rem 2rem;
+    padding: 0.6rem var(--horizontal-page-padding);
     font-size: 0.85rem;
     color: #64748b;
     min-height: 2rem;
@@ -143,15 +164,15 @@ header {
 }
 
 #results {
-    padding: 0 2rem 2rem;
+    padding: 0 var(--horizontal-page-padding) 2rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
 .card {
-    background: white;
-    border: 1px solid #e2e8f0;
+    background: var(--color-surface);
+    border: var(--border-soft);
     border-radius: 8px;
     padding: 0.75rem 1rem;
     display: flex;
@@ -164,7 +185,7 @@ header {
 
 .card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-color: #1d3557;
+    border-color: var(--color-brand);
 }
 
 .card .info {
@@ -174,7 +195,7 @@ header {
 .card .headline {
     font-weight: 600;
     font-size: 0.95rem;
-    color: #1d3557;
+    color: var(--color-brand);
 }
 
 .card .filename {
