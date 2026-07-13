@@ -14,7 +14,11 @@ svg {
 
 :root {
     --color-brand: #1d3557;
+    --color-brand-hover: #2a4a7f;
+    --color-brand-active: #162840;
     --color-background: #f4f4f5;
+    --color-control-hover: #f8fafc;
+    --focus-ring: 0 0 0 3px rgba(29, 53, 87, 0.38);
     --color-surface: white;
     --color-text: #1a1a1a;
     --color-border: #cbd5e1;
@@ -79,14 +83,29 @@ header {
     color: var(--color-text);
 }
 
+.query-field input[type="text"]:hover,
+.limit-group input[type="number"]:hover {
+    border-color: var(--color-brand);
+}
+
+.query-field input[type="text"]:focus,
+.limit-group input[type="number"]:focus {
+    border-color: var(--color-brand);
+}
+
+.query-field input[type="text"]:focus-visible,
+.limit-group input[type="number"]:focus-visible,
+.search-btn:focus-visible,
+.clear-btn:focus-visible,
+.checkbox-label input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
 .query-field input[type="text"] {
     display: block;
     width: 100%;
     padding: 0.55rem 2.6rem 0.55rem 0.85rem;
-}
-
-.query-field input[type="text"]:focus {
-    border-color: var(--color-brand);
 }
 
 .clear-btn {
@@ -106,14 +125,19 @@ header {
     cursor: pointer;
 }
 
-.clear-btn[hidden] {
-    display: none;
-}
-
 .clear-btn svg {
     width: 1.25rem;
     height: 1.25rem;
     fill: currentColor;
+}
+
+.clear-btn[hidden] {
+    display: none;
+}
+
+.clear-btn:hover {
+    background: var(--color-control-hover);
+    color: var(--color-text);
 }
 
 .checkbox-label {
@@ -124,6 +148,10 @@ header {
     color: #475569;
     white-space: nowrap;
     cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--color-brand);
 }
 
 .limit-group {
@@ -141,10 +169,6 @@ header {
     text-align: center;
 }
 
-.limit-group input[type="number"]:focus {
-    border-color: var(--color-brand);
-}
-
 .search-btn {
     padding: 0.55rem 1.25rem;
     white-space: nowrap;
@@ -155,11 +179,13 @@ header {
 }
 
 .search-btn:hover {
-    background: #2a4a7f;
+    background: var(--color-brand-hover);
+    border-color: var(--color-brand-hover);
 }
 
 .search-btn:active {
-    background: #162840;
+    background: var(--color-brand-active);
+    border-color: var(--color-brand-active);
 }
 
 .status {
