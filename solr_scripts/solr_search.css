@@ -261,3 +261,32 @@ header {
     padding: 3rem;
     font-size: 1rem;
 }
+
+/* Make the toolbar stack nicely on small screens */
+@media (max-width: 640px) {
+    :root {
+        --horizontal-page-padding: 1rem;
+    }
+
+    .search-form {
+        align-items: stretch;
+    }
+
+    .query-field {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .limit-group {
+        flex: 1 1 auto;
+    }
+
+    .checkbox-label {
+        flex: 0 0 auto;
+    }
+
+    .search-btn {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
